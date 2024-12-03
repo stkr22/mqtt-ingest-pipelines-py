@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier
+_commit: 0.1.6
+_src_path: gh:stkr22/copier-python-project
+author_email: stkr22@github.com
+author_full_name: stkr22
+copyright_license: GNU General Public License v3.0
+project_description: Collection of MQTT data pipelines for home automation and IoT
+    devices.
+project_name: MQTT Ingest Pipelines
+python_package_distribution_name: mqtt-ingest-pipelines
+python_package_import_name: mqtt_ingest_pipelines
+version: 0.1.0

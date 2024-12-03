@@ -1,0 +1,6 @@
+FROM mcr.microsoft.com/devcontainers/python:3.12
+COPY --from=ghcr.io/astral-sh/uv:0.5.7 /uv /uvx /bin/
+ENV VIRTUAL_ENV=/workspaces/.venv
+ENV UV_PROJECT_ENVIRONMENT=/workspaces/.venv
+RUN uv venv /workspaces/.venv && chown -R vscode:vscode /workspaces/.venv
+USER vscode
