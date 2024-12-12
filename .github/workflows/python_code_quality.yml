@@ -25,6 +25,8 @@ jobs:
         with:
           # Install a specific version of uv.
           version: "0.5.7"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -48,6 +50,8 @@ jobs:
         with:
           # Install a specific version of uv.
           version: "0.5.7"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -72,6 +76,8 @@ jobs:
         with:
           # Install a specific version of uv.
           version: "0.5.7"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
       - name: Set up Python
         uses: actions/setup-python@v5
