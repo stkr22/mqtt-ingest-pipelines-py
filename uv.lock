@@ -180,12 +180,12 @@ requires-dist = [
     { name = "aiomqtt", specifier = ">=2.3" },
     { name = "asyncpg", specifier = ">=0.30.0" },
     { name = "sqlmodel", specifier = ">=0.0.22" },
-    { name = "typer", specifier = ">=0.15.1" },
+    { name = "typer", specifier = ">=0.15.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "mypy", specifier = ">=1.13.0" },
+    { name = "mypy", specifier = ">=1.11.0" },
     { name = "pytest", specifier = ">=8.3.3" },
     { name = "pytest-cov", specifier = ">=6.0.0" },
     { name = "ruff", specifier = ">=0.8.0" },

@@ -22,7 +22,7 @@ def transform_iot_message(topic: str, payload: dict[str, Any], logger: logging.L
         logger.warning("Topic not matching expected length: %s", topic)
         return None
     try:
-        return IoTData(
+        iot_data = IoTData(
             time=datetime.now(),
             device_id=topic,
             room=parts[1],
@@ -31,6 +31,8 @@ def transform_iot_message(topic: str, payload: dict[str, Any], logger: logging.L
             topic=topic,
             payload=payload,
         )
+        IoTData.model_validate(iot_data.model_dump())
+        return iot_data
 
     except Exception as e:
         logger.error("Error storing message for topic %s: %s", topic, str(e))
