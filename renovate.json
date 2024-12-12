@@ -1,0 +1,37 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base"
+    ],
+    "packageRules": [
+      {
+        "matchManagers": ["pip_requirements", "pip_setup", "pyproject"],
+        "enabled": true,
+        "lockFileMaintenance": {
+          "enabled": true,
+          "schedule": ["before 4am on monday"]
+        }
+      }
+    ],
+    "python": {
+      "packageRules": [
+        {
+          "matchPackageNames": ["*"],
+          "matchManagers": ["pip_requirements", "pip_setup", "pyproject"],
+          "constraints": {
+            "python": ">=3.8"
+          }
+        }
+      ]
+    },
+    "enabledManagers": ["pip_requirements", "pip_setup", "pyproject"],
+    "useUvForPipenv": true,
+    "useUvForPoetry": true,
+    "useUvPip": true,
+    "labels": ["dependencies"],
+    "schedule": ["before 4am on monday"],
+    "automerge": false,
+    "prHourlyLimit": 5,
+    "prConcurrentLimit": 10,
+    "reviewers": ["owner"]
+  }
