@@ -2,5 +2,11 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "lockFileMaintenance": {
         "enabled": true
+    },
+    "copier":{
+        "fileMatch": [
+            "(^|/)\\.copier-answers(\\..+)?\\.ya?ml"
+        ],
+        "versioning": "semver"
     }
 }
