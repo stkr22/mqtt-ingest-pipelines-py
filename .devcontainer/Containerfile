@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/python@sha256:4c340e4d43f37553804121a86924fc5f267abd106a9ef2d151776ba64059693d
+FROM mcr.microsoft.com/devcontainers/python@sha256:f84dde6b1993dca054dbeab997220a1e346ac1c6bf08af1f69412e47ac1d2200
 COPY --from=ghcr.io/astral-sh/uv:0.5.7 /uv /uvx /bin/
 ENV VIRTUAL_ENV=/workspaces/.venv
 ENV UV_PROJECT_ENVIRONMENT=/workspaces/.venv
