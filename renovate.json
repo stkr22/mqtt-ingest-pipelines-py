@@ -6,7 +6,7 @@
     "packageRules": [
         {
             "matchPaths": [
-                "**/devcontainer.json"
+                "**/Containerfile"
             ],
             "matchDepNames": [
                 "python"
