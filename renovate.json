@@ -3,17 +3,6 @@
     "lockFileMaintenance": {
         "enabled": true
     },
-    "packageRules": [
-        {
-            "matchPaths": [
-                "**/Containerfile"
-            ],
-            "matchDepNames": [
-                "python"
-            ],
-            "enabled": false
-        }
-    ],
     "pre-commit": {
         "enabled": true
     }
