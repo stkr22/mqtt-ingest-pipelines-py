@@ -28,6 +28,6 @@
 	"containerEnv": {
 		"HOME": "/home/vscode"
 	},
-	"postCreateCommand": "pip install --user pre-commit && uv pip install -e '.[dev]' && pre-commit install"
+	"postCreateCommand": "uv sync --group dev && uvx pre-commit install"
 
 }

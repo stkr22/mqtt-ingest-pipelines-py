@@ -3,10 +3,18 @@
     "lockFileMaintenance": {
         "enabled": true
     },
-    "copier":{
-        "fileMatch": [
-            "(^|/)\\.copier-answers(\\..+)?\\.ya?ml"
-        ],
-        "versioning": "semver"
+    "packageRules": [
+        {
+            "matchPaths": [
+                "**/devcontainer.json"
+            ],
+            "matchDepNames": [
+                "python"
+            ],
+            "enabled": false
+        }
+    ],
+    "pre-commit": {
+        "enabled": true
     }
 }
