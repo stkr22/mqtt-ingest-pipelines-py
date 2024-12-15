@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mqtt-ingest-pipeline"
-version = "0.1.0"
+version = "0.1.1"
 description = "Collection of MQTT data transformers for home automation and IoT devices."
 authors = [
     { name = "stkr22", email = "stkr22@github.com" }
@@ -27,7 +27,7 @@ classifiers = [
 ]
 
 [project.scripts]
-mqtt-ingest-pipeline = "mqtt_ingest_pipeline.app:main"
+mqtt-ingest-pipeline = "mqtt_ingest_pipeline.main:app"
 
 [dependency-groups]
 dev = [
