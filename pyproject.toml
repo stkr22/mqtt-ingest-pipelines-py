@@ -3,14 +3,21 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
+<<<<<<< before updating
 name = "mqtt-ingest-pipeline"
 version = "0.1.1"
 description = "Collection of MQTT data transformers for home automation and IoT devices."
+=======
+name = "mqtt-ingest-pipelines"
+version = "0.1.0"
+description = "Collection of MQTT data pipelines for home automation and IoT devices."
+>>>>>>> after updating
 authors = [
     { name = "stkr22", email = "stkr22@github.com" }
 ]
 readme = "README.md"
 license = { text = "GNU General Public License v3.0" }
+<<<<<<< before updating
 requires-python = ">=3.11,<3.13"
 dependencies = [
     "aiomqtt>=2.3",
@@ -29,6 +36,20 @@ classifiers = [
 [project.scripts]
 mqtt-ingest-pipeline = "mqtt_ingest_pipeline.main:app"
 
+=======
+
+keywords = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Undefined",
+]
+
+requires-python = ">=3.11,<3.13"
+dependencies = []
+
+>>>>>>> after updating
 [dependency-groups]
 dev = [
     "ruff>=0.8.0",
@@ -70,7 +91,11 @@ python_files = ["test_*.py"]
 addopts = "-ra -q"
 
 [tool.coverage.run]
+<<<<<<< before updating
 source = ["mqtt_ingest_pipeline"]
+=======
+source = ["mqtt_ingest_pipelines"]
+>>>>>>> after updating
 branch = true
 
 [tool.coverage.report]
