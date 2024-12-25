@@ -158,7 +158,7 @@ wheels = [
 
 [[package]]
 name = "mqtt-ingest-pipeline"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "aiomqtt" },
@@ -177,10 +177,10 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aiomqtt", specifier = ">=2.3" },
-    { name = "asyncpg", specifier = ">=0.30.0" },
-    { name = "sqlmodel", specifier = ">=0.0.22" },
-    { name = "typer", specifier = ">=0.15.0" },
+    { name = "aiomqtt", specifier = ">=2.3,<3.0.0" },
+    { name = "asyncpg", specifier = ">=0.30.0,<1.0.0" },
+    { name = "sqlmodel", specifier = ">=0.0.22,<1.0.0" },
+    { name = "typer", specifier = ">=0.15.0,<1.0.0" },
 ]
 
 [package.metadata.requires-dev]
