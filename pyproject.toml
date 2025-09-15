@@ -78,6 +78,9 @@ select = [
 ]
 ignore = ["E203"]
 
+[tool.ruff.lint.per-file-ignores]
+"src/mqtt_ingest_pipeline/main.py" = ["PLR0913"]  # Allow many arguments for CLI command
+
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
