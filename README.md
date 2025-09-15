@@ -10,4 +10,6 @@
 
 Owner: stkr22
 
-Collection of MQTT data pipelines for home automation and IoT devices.
+**READ THE AGENTS.md**
+
+Collection of MQTT data transformers for home automation and IoT devices.
