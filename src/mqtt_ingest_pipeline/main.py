@@ -1,4 +1,5 @@
 import asyncio
+from dataclasses import dataclass
 from typing import Annotated
 
 import typer
@@ -9,6 +10,22 @@ from sqlmodel import SQLModel, text
 from mqtt_ingest_pipeline import assistant_data_transformer, iot_data_transformer, mqtt_data_pipeline, utility
 
 app = typer.Typer()
+
+
+@dataclass
+class DatabaseConfig:
+    """Database configuration parameters."""
+
+    user: str
+    password: str
+    host: str
+    port: int
+    name: str
+
+    @property
+    def url(self) -> str:
+        """Generate the database URL from configuration."""
+        return f"postgresql+asyncpg://{self.user}:{self.password}@{self.host}:{self.port}/{self.name}"
 
 
 async def setup_database(engine: AsyncEngine) -> None:
@@ -29,11 +46,11 @@ async def setup_database(engine: AsyncEngine) -> None:
 async def start_pipeline(
     mqtt_host: str,
     mqtt_port: int,
-    db_url: str,
+    db_config: DatabaseConfig,
 ) -> None:
     """Initialize and run the MQTT data pipeline."""
     client = Client(hostname=mqtt_host, port=mqtt_port)
-    db_engine_async = create_async_engine(db_url)
+    db_engine_async = create_async_engine(db_config.url)
 
     # Setup database
     await setup_database(db_engine_async)
@@ -112,8 +129,14 @@ def main(
     ] = "postgres",
 ) -> None:
     """Run the MQTT to TimescaleDB pipeline."""
-    db_url = f"postgresql+asyncpg://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-    asyncio.run(start_pipeline(mqtt_host, mqtt_port, db_url))
+    db_config = DatabaseConfig(
+        user=db_user,
+        password=db_password,
+        host=db_host,
+        port=db_port,
+        name=db_name,
+    )
+    asyncio.run(start_pipeline(mqtt_host, mqtt_port, db_config))
 
 
 if __name__ == "__main__":

@@ -5,6 +5,8 @@ from typing import Any
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlmodel import Field, SQLModel
 
+EXPECTED_TOPIC_PARTS = 4
+
 
 class IoTData(SQLModel, table=True):
     time: datetime = Field(primary_key=True)
@@ -18,7 +20,7 @@ class IoTData(SQLModel, table=True):
 
 def transform_iot_message(topic: str, payload: dict[str, Any], logger: logging.Logger) -> IoTData | None:
     parts = topic.strip("/").split("/")
-    if len(parts) != 4:
+    if len(parts) != EXPECTED_TOPIC_PARTS:
         logger.warning("Topic not matching expected length: %s", topic)
         return None
     try:
