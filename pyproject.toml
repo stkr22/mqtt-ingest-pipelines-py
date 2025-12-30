@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: Home Automation",
 ]
 
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.12,<3.14"
 dependencies = [
     "aiomqtt~=2.4.0",
     "asyncpg~=0.31.0",
