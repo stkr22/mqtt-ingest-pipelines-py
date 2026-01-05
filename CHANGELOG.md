@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/stkr22/mqtt-ingest-pipelines-py/compare/v0.1.4...v0.1.5) (2026-01-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency aiomqtt to ~=2.5.0 ([2c6204d](https://github.com/stkr22/mqtt-ingest-pipelines-py/commit/2c6204d9f48aa397611dc0958e45f07b4dfdc519))
+* **deps:** update dependency aiomqtt to ~=2.5.0 ([6305655](https://github.com/stkr22/mqtt-ingest-pipelines-py/commit/630565575cec203374beda98bc87abd57e8ea4f9))
+
 ## [0.1.4](https://github.com/stkr22/mqtt-ingest-pipelines-py/compare/v0.1.3...v0.1.4) (2025-12-30)
 
 
